@@ -8,7 +8,7 @@
               <div class="col-12">
                 <span class="d-flex align-items-center purchase-popup">
                   <p>Bienvenu, admin de  <h2 class="text-info">{{$administration->nom}}</h2></p>
-                  <a href="#" target="_blank" class="btn download-button purchase-button ml-auto">Ajouter un membre de l'administration</a>
+                  <a href="{{route('administration.ajout')}}" class="btn download-button purchase-button ml-auto">Ajouter un membre de l'administration</a>
                   <i class="mdi mdi-close" id="bannerClose"></i>
                 </span>
               </div>

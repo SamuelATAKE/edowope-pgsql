@@ -28,34 +28,34 @@
                     <div class="statistics-details d-flex align-items-center justify-content-between">
                       <div>
                         <p class="statistics-title">Nombre de services administratifs</p>
-                        <h3 class="rate-percentage">32</h3>
+                        <h3 class="rate-percentage">3</h3>
                         {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>-0.5%</span></p> --}}
                       </div>
                       <div>
                         <p class="statistics-title">Nombre d'agents</p>
-                        <h3 class="rate-percentage">7,682</h3>
+                        <h3 class="rate-percentage">7</h3>
                         {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-up"></i><span>+0.1%</span></p> --}}
                       </div>
                       <div>
                         <p class="statistics-title">Nombre de dépôts</p>
-                        <h3 class="rate-percentage">68.8</h3>
+                        <h3 class="rate-percentage">6</h3>
                         {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p> --}}
                       </div>
                       <div class="d-none d-md-block">
                         <p class="statistics-title">Nombre de dossiers en cours de traitement</p>
-                        <h3 class="rate-percentage">235</h3>
+                        <h3 class="rate-percentage">2</h3>
                         {{-- <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p> --}}
                       </div>
                       <div class="d-none d-md-block">
                         <p class="statistics-title">Nombre de dossiers traités</p>
-                        <h3 class="rate-percentage">688</h3>
+                        <h3 class="rate-percentage">6</h3>
                         {{-- <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span>68.8</span></p> --}}
                       </div>
 
                     </div>
                   </div>
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                   <div class="col-lg-8 d-flex flex-column">
                     <div class="row flex-grow">
                       <div class="col-12 col-lg-4 col-lg-12 grid-margin stretch-card">
@@ -128,8 +128,8 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
+                </div> --}}
+                {{-- <div class="row">
                   <div class="col-lg-8 d-flex flex-column">
                     <div class="row flex-grow">
                       <div class="col-12 grid-margin stretch-card">
@@ -707,7 +707,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -718,8 +718,8 @@
     <!-- partial:partials/_footer.html -->
     <footer class="footer">
       <div class="d-sm-flex justify-content-center justify-content-sm-between">
-        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Plateforme de gestion administrative - Edowopé</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2022. Tous droits réservés.</span>
       </div>
     </footer>
     <!-- partial -->

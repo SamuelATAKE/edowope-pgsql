@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Routes pour l'accueil --- utilisateurs simples de la plateforme
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -29,9 +31,7 @@ Route::get('/a-propos', function () {
     return view('homepages.about');
 })->name('home.about');
 
-Route::get('/deposer-mon-dossier', function () {
-    return view('homepages.formulaire');
-})->name('home.formulaire');
+Route::get('/deposer-mon-dossier', 'DossierController@create')->name('home.formulaire');
 
 Route::post('/service-depot', 'DossierController@chooseService')->name('choose.service');
 
@@ -75,9 +75,18 @@ Route::get('/ajouter-administrateur', 'AdministrateurController@create')->name('
 
 Route::post('/ajout-admin', 'AdministrateurController@store')->name('admin.store');
 
-Route::get('/partie-administration', function () {
-    return view('superadmin.index');
-})->name('superadmin');
+Route::get('/partie-administration', 'AdministrateurController@adminlogged')->name('superadmin');
+
+// Générer le code Qr
 
 Route::get('/qrcode', 'HomeController@qrcode')->name('qrcode');
+
+
+// Route::get('/details', function() {
+//     return view('admin.detail');
+// });
+
+// Détails du dossier
+
+Route::get('/details-dossier/{id}', 'DossierController@show')->name('dossier.details');
 

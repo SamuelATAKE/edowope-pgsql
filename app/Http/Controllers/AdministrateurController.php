@@ -20,6 +20,11 @@ class AdministrateurController extends Controller
         return view('admin.index', compact('administration'));
     }
 
+    public function adminlogged(){
+        $admin = Administrateur::where('id', session('user')->id);
+        return view('superadmin.index', compact('admin'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

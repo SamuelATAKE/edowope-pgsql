@@ -17,14 +17,15 @@ class CreateDossiersTable extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email');
+            $table->string('email')->default('null');
             $table->string('telephone');
             $table->string('profession');
             $table->string('genre');
             $table->string('type');
             $table->string('contenu');
+            $table->string('document')->default(null);
             $table->string('motif');
-            $table->string('commentaire');
+            $table->string('commentaire')->default(null);
             $table->string('code_depot');
             $table->string('etat');
             $table->string('administration');

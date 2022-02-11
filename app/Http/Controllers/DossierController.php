@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Dossier;
+use App\Service;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -25,7 +26,8 @@ class DossierController extends Controller
      */
     public function create()
     {
-        //
+        $services = Service::All();
+        return view('homepages.formulaire', compact('services'));
     }
 
     /**
@@ -47,6 +49,14 @@ class DossierController extends Controller
             'motif' => 'required'
         ]);
 
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $randomString = '';
+
+        for ($i = 0; $i < 6; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $randomString .= $characters[$index];
+        }
+
         $code = '';
         $char = '';
         $char1 = '';
@@ -54,10 +64,21 @@ class DossierController extends Controller
         $char1 = request('prenom');
         $code .= $char[0];
         $code .= $char[1];
+        $code .= $randomString;
         $code .= date('Y-m-d');
         $code .= $char1[0];
         $code .= $char1[1];
         // dd('Well');
+
+        if ($request->file('document')) {
+            $documentPath = $request->file('document');
+            $documentName = $documentPath->getClientOriginalName();
+
+            $path = $request->file('document')->storeAs('document', $documentName, 'public');
+
+            // dd($path);
+          }
+
         $dossier = new Dossier();
 
         $dossier->nom = request('nom');
@@ -69,10 +90,17 @@ class DossierController extends Controller
         $dossier->type = request('type');
         $dossier->contenu = request('contenu');
         $dossier->motif = request('motif');
+        $dossier->document = $path;
         $dossier->commentaire = request('commentaire');
         $dossier->code_depot = $code;
         $dossier->etat = '';
-        $dossier->administration = session('service');
+
+        if(session('service')){
+            $dossier->administration = session('service');
+        }else{
+            $dossier->administration = request('administration');
+        }
+
         // dd($dossier);
         $dossier->save();
 
@@ -196,12 +224,15 @@ class DossierController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Dossier  $dossier
-     * @return \Illuminate\Http\Response
      */
-    public function show(Dossier $dossier)
+    public function show(int $id)
     {
-        //
+        $dossier = Dossier::find($id);
+        if($dossier){
+            return view('admin.detail', compact('dossier'));
+        }else{
+            return back()->with('error', 'Erreur de détection de dossier');
+        }
     }
 
     /**

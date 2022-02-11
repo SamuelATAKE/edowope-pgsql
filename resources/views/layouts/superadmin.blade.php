@@ -45,7 +45,7 @@
       <div class="navbar-menu-wrapper d-flex align-items-top">
         <ul class="navbar-nav">
           <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-            <h1 class="welcome-text">Bienvenue, <span class="text-black fw-bold">John Doe</span></h1>
+            <h1 class="welcome-text">Bienvenue, <span class="text-black fw-bold">Administrateur</span></h1>
             {{-- <h3 class="welcome-sub-text">Your performance summary this week </h3> --}}
           </li>
         </ul>
@@ -101,7 +101,7 @@
             <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
               <i class="icon-mail icon-lg"></i>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
+            {{-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
               <a class="dropdown-item py-3 border-bottom">
                 <p class="mb-0 font-weight-medium float-left">Vous avez 4 notifications </p>
                 <span class="badge badge-pill badge-primary float-right">Voir tout</span>
@@ -133,14 +133,14 @@
                   <p class="fw-light small-text mb-0"> 2 days ago </p>
                 </div>
               </a>
-            </div>
+            </div> --}}
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link count-indicator" id="countDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="icon-bell"></i>
               <span class="count"></span>
             </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
+            {{-- <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="countDropdown">
               <a class="dropdown-item py-3">
                 <p class="mb-0 font-weight-medium float-left">Vous avez 7 mails </p>
                 <span class="badge badge-pill badge-primary float-right">Voir tout</span>
@@ -173,7 +173,7 @@
                   <p class="fw-light small-text mb-0"> The meeting is cancelled </p>
                 </div>
               </a>
-            </div>
+            </div> --}}
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
@@ -372,7 +372,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="{{route('superadmin')}}">
               <i class="mdi mdi-grid-large menu-icon"></i>
               <span class="menu-title">Tableau de bord</span>
             </a>

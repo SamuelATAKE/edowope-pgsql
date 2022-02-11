@@ -13,7 +13,7 @@
                 <h3>Plateforme de gestion administratives</h3>
                 <h2>Déposer et suiver votre dossier du début du traitement jusqu'à la date de retrait</h2>
                 <p> Evitez des déplacements inutiles! Dynamisons le traitement des dossiers</p>
-                <a href="#service" class="learn_more2">Déposer un dossier</a> </div>
+                <a href="{{route('home.formulaire')}}" class="learn_more2">Déposer un dossier</a> </div>
             </div>
             <div class="col-lg-7 col-sm-5"> </div>
           </div>

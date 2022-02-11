@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{$dossier->created_at}}</td>
                         <td>{{$dossier->nom}} {{$dossier->prenom}}</td>
-                        <td>{{$dossier->contenu}}</td>
+                        <td><a href="{{route('dossier.details', $dossier->id)}}">{{$dossier->contenu}}</a></td>
                         <td>{{$dossier->motif}}</td>
                         <td>
                             <form action="{{route('depot.valider')}}" method="post">
